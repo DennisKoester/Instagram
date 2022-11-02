@@ -4,6 +4,8 @@
     scroll-behavior: smooth;
 }
 
+/* Header */
+
 .header-container {
     padding: 12px;
     display: flex;
@@ -47,3 +49,109 @@
     object-fit: cover;
     cursor: pointer;
 }
+
+/* Story Section */
+
+.story-container {
+    margin: 30px;
+}
+
+.story-timeline {
+    margin: auto;
+    display: flex;
+    gap: 15px;
+    max-width: 450px;
+    overflow-x: auto;
+    /* -ms-overflow-style: none; */
+    /* Internet Explorer 10+ */
+    /* scrollbar-width: none; */
+    /* Firefox */
+}
+
+/* .story-timeline::-webkit-scrollbar {
+    /* display: none; */
+/* Safari and Chrome */
+/* }  */
+
+.story-photo {
+    height: 60px;
+}
+
+.story-profile {
+    text-align: center;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    width: 70px;
+
+}
+
+.profile-name {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    font-size: 14px;
+}
+
+
+/* Post Timeline */
+
+.post-timeline {
+    margin: 50px auto;
+    width: 450px;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-info {
+    display: flex;
+}
+
+.post-info-container {
+    padding-left: 10px;
+}
+
+.post-profile-photo {
+    height: 35px;
+}
+
+.post-name-date {
+    display: flex;
+    font-weight: 600;
+}
+
+.date-posted {
+    margin-left: 7px;
+    color: gray;
+}
+
+.location {
+    font-size: 14px;
+}
+
+.dots {
+    height: 20px;
+}
+
+.post-image {
+    margin-top: 10px;
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+.post-footer {
+    display: flex;
+}
+
+.post-footer img {
+    height: 25px;
+    object-fit: cover;
+    padding-left: 15px;
+}
+

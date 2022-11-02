@@ -1,29 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instapixel</title>
 
-   <link rel="stylesheet" href="style.css">
-   <script src="script.js"></script>
-   <script src="posts.js"></script>
-   <script src="htmlTemplates.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="posts.js"></script>
+    <script src="htmlTemplates.js"></script>
 
-   <link rel="icon" type="image/x-icon" href="img/icons/Instagram-fav.svg">
+    <link rel="icon" type="image/x-icon" href="img/icons/Instagram-fav.svg">
 
-    
+
 </head>
+
 <body onload="init()">
     <header>
         <div w3-include-html="templates/header.html"></div>
     </header>
 
+    <section class="story-container">
+        <div class="story-timeline">
+            <div class="story-profile">
+                <div><img class="story-photo" src="img/icons/Instagram_Stories_ring.png" alt="Story-Photo"></a></div>
+                <div class="profile-name">Hans Peter</div>
+            </div>
+            <div class="story-profile">
+                <div><img class="story-photo" src="img/icons/Instagram_Stories_ring.png" alt="Story-Photo"></a></div>
+                <div class="profile-name">Maria van der Garden</div>
+            </div>
+            <div class="story-profile">
+                <div><img class="story-photo" src="img/icons/Instagram_Stories_ring.png" alt="Story-Photo"></a></div>
+                <div class="profile-name">Hans Peter</div>
+            </div>
+            <div class="story-profile">
+                <div><img class="story-photo" src="img/icons/Instagram_Stories_ring.png" alt="Story-Photo"></a></div>
+                <div class="profile-name">Hans Peter</div>
+            </div>
+            <div class="story-profile">
+                <div><img class="story-photo" src="img/icons/Instagram_Stories_ring.png" alt="Story-Photo"></a></div>
+                <div class="profile-name">Hans Peter</div>
+            </div>
+            <div class="story-profile">
+                <div><img class="story-photo" src="img/icons/Instagram_Stories_ring.png" alt="Story-Photo"></a></div>
+                <div class="profile-name">Hans Peter</div>
+            </div>
+            <div class="story-profile">
+                <div><img class="story-photo" src="img/icons/Instagram_Stories_ring.png" alt="Story-Photo"></a></div>
+                <div class="profile-name">Hans Peter</div>
+            </div>
+            <div class="story-profile">
+                <div><img class="story-photo" src="img/icons/Instagram_Stories_ring.png" alt="Story-Photo"></a></div>
+                <div class="profile-name">Hans Peter</div>
+            </div>
+        </div>
+    </section>
 
+    <section id="post-timeline" class="post-timeline">
+        <div class="post">
+            <div class="post-header">
+                <div class="profile-info">
+                    <div><img class="post-profile-photo" src="img/icons/Instagram_Stories_ring.png" alt=""></div>
+                    <div class="post-info-container">
+                        <div class="post-name-date">Dennis Köster
+                            <div class="date-posted">&#8226; 1 d</div>
+                        </div>
+                        <div class="location">Münster, Bahnhof</div>
+                    </div>
+                </div>
+                <img class="dots" src="img/icons/icons8-dots-loading-30.png" alt="Dots">
+            </div>
+            <img class="post-image" src="img/Sunset lover.jpg" alt="">
+            <div class="post-footer">
+                <img src="img/icons/91979ed627b722cfbbaa2b55a593949c.svg" alt="Heart">
+                <img src="img/icons/icons8-sprechblase-50.png" alt="Speaking Bubble">
+                <img src="img/icons/icons8-paper-plane-nachricht-60.png" alt="Paper Plane">
+            </div>
+            <div class="comment-section"></div>
+        </div>
+    </section>
 
     <footer>
         <div w3-include-html="templates/footer.html"></div>
     </footer>
 </body>
+
 </html>

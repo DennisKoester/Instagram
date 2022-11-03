@@ -1,4 +1,4 @@
-function postTemplateHTML(author, location, date, image, description, likes, author_comment, comment) {
+function postTemplateHTML(i, author, location, date, image, description, likes, author_comment, comment) {
     return /*html*/ `
     <div class="post">
             <div class="post-header">
@@ -13,7 +13,7 @@ function postTemplateHTML(author, location, date, image, description, likes, aut
                 </div>
                 <img class="dots" src="img/icons/icons8-dots-loading-30.png" alt="Dots">
             </div>
-            <img  onclick="openPost()" class="post-image" src="${image}" alt="">
+            <img  onclick="openPost(${i})" class="post-image" src="${image}" alt="">
             <div class="post-footer">
                 <div><span class="material-symbols-outlined heart">
                         favorite
@@ -42,9 +42,9 @@ function postTemplateHTML(author, location, date, image, description, likes, aut
                 </div>
                 <div class="add-comment-section">
                     <form action="">
-                        <input id="input-comment" class="input-comment" type="text" placeholder="Add a comment...">
+                        <input id="input-comment${i}" class="input-comment" type="text" placeholder="Add a comment...">
+                        <button onclick="pushComment(${i})" type="button">Send</button>
                 </form>
-                    <!-- <div class="add-comment">Add a comment...</div> -->
                     <div class="emoji"><span class="material-symbols-outlined">
                             sentiment_satisfied
                         </span></div>

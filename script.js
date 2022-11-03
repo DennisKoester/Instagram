@@ -29,22 +29,28 @@ function renderPosts() {
         let description = posts[i]['description'];
         let likes = posts[i]['likes'];
         let author_comment = posts[i]['author_comment'];
-        let comment = posts[i]['comment'];
+        let comment = posts[i]['comments'];
 
-        post.innerHTML += postTemplateHTML(author, location, date, image, description, likes, author_comment, comment);
+        post.innerHTML += postTemplateHTML(i, author, location, date, image, description, likes, author_comment, comment);
     }
 }
 
-function 
+function pushComment(){
+    let comment = document.getElementById('input-comment').value;
+    
+    posts['author_comment'].push("Guest User")
+    posts['comments'].push(comment)
+
+    comment.innerHTML = '';
+}
 
 
-
-function openPost() {
-    let popup = document.getElementById('popup-post');
+function openPost(i) {
+    let popup = document.getElementById(`popup-post${i}`);
     popup.style.display = "block";
 }
 
-function closePost() {
-    let popup = document.getElementById('popup-post');
+function closePost(i) {
+    let popup = document.getElementById(`popup-post${i}`);
     popup.style.display = "none";
 }

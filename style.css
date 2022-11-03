@@ -2,6 +2,8 @@
     margin: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
 }
 
 /* Header */
@@ -18,8 +20,8 @@
     height: 35px;
 }
 
-.notification-logo {
-    height: 30px;
+.notification-logo span {
+    cursor: pointer;
 }
 
 .form {
@@ -59,7 +61,7 @@
 .story-timeline {
     margin: auto;
     display: flex;
-    gap: 15px;
+    gap: 8px;
     max-width: 450px;
     overflow-x: auto;
     /* -ms-overflow-style: none; */
@@ -83,6 +85,7 @@
     display: flex;
     flex-direction: column;
     width: 70px;
+    cursor: pointer;
 
 }
 
@@ -91,7 +94,7 @@
     white-space: nowrap;
     overflow: hidden;
     width: 100%;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 
@@ -118,11 +121,15 @@
 
 .post-profile-photo {
     height: 35px;
+    cursor: pointer;
 }
 
 .post-name-date {
     display: flex;
-    font-weight: 600;
+}
+
+.post-name-date span {
+    cursor: pointer;
 }
 
 .date-posted {
@@ -131,11 +138,13 @@
 }
 
 .location {
-    font-size: 14px;
+    font-size: 12px;
+    cursor: pointer;
 }
 
 .dots {
     height: 20px;
+    cursor: pointer;
 }
 
 .post-image {
@@ -147,11 +156,63 @@
 
 .post-footer {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.post-footer img {
-    height: 25px;
+.post-footer span {
+    height: 0;
     object-fit: cover;
-    padding-left: 15px;
+    padding: 5px 15px 0 0;
+    cursor: pointer;
 }
 
+.paper-plane {
+    -webkit-transform: rotate(-45deg);
+    padding: 0 0 15px 0 !important;
+
+}
+
+.bookmark {
+    padding: 0 !important;
+}
+
+.likes {
+    padding-top: 5px;
+}
+
+.comment-section {
+    line-height: 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.486);
+}
+
+.comment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.comment-heart span {
+    font-size: 18px;
+    color: gray;
+    cursor: pointer;
+
+}
+
+.add-comment {
+    color: gray;
+}
+
+.add-comment-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.emoji span {
+    font-size: 18px;
+    color: gray;
+    cursor: pointer;
+}

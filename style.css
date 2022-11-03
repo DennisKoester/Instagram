@@ -186,6 +186,7 @@
     width: 100%;
     height: auto;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .post-footer {
@@ -234,8 +235,15 @@
 
 }
 
-.add-comment {
+/* .add-comment {
     color: gray;
+    cursor: pointer;
+} */
+
+.input-comment {
+    background: transparent;
+    border: none;
+    outline: none;
 }
 
 .add-comment-section {
@@ -308,10 +316,6 @@
     height: auto;
 }
 
-.d-none {
-    display: none;
-}
-
 .close-btn {
     position: absolute;
     top: 0;
@@ -322,6 +326,14 @@
 .close-btn span {
     color: white;
     cursor: pointer;
+}
+
+.d-none {
+    display: none;
+}
+
+.no-scroll {
+    overflow: hidden;
 }
 
 @media(max-width:380px) {

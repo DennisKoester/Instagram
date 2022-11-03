@@ -12,6 +12,39 @@ async function includeHTML() {
     }
 }
 
-function init(){
+function init() {
     includeHTML();
+    renderPosts();
+}
+
+
+function renderPosts() {
+
+    for (let i = 0; i < posts.length; i++) {
+        let post = document.getElementById('post-timeline');
+        let author = posts[i]['author'];
+        let location = posts[i]['location'];
+        let date = posts[i]['date'];
+        let image = posts[i]['image'];
+        let description = posts[i]['description'];
+        let likes = posts[i]['likes'];
+        let author_comment = posts[i]['author_comment'];
+        let comment = posts[i]['comment'];
+
+        post.innerHTML += postTemplateHTML(author, location, date, image, description, likes, author_comment, comment);
+    }
+}
+
+function 
+
+
+
+function openPost() {
+    let popup = document.getElementById('popup-post');
+    popup.style.display = "block";
+}
+
+function closePost() {
+    let popup = document.getElementById('popup-post');
+    popup.style.display = "none";
 }

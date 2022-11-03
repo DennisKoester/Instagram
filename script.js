@@ -23,6 +23,7 @@ function renderPosts() {
     for (let i = 0; i < posts.length; i++) {
         let post = document.getElementById('post-timeline');
         let author = posts[i]['author'];
+        let author_image = posts[i]['author_image'];
         let location = posts[i]['location'];
         let date = posts[i]['date'];
         let image = posts[i]['image'];
@@ -31,13 +32,13 @@ function renderPosts() {
         let author_comment = posts[i]['author_comment'];
         let comment = posts[i]['comments'];
 
-        post.innerHTML += postTemplateHTML(i, author, location, date, image, description, likes, author_comment, comment);
+        post.innerHTML += postTemplateHTML(i, author, author_image, location, date, image, description, likes, author_comment, comment);
     }
 }
 
-function pushComment(){
+function pushComment() {
     let comment = document.getElementById('input-comment').value;
-    
+
     posts['author_comment'].push("Guest User")
     posts['comments'].push(comment)
 
@@ -46,7 +47,9 @@ function pushComment(){
 
 
 function openPost(i) {
-    let popup = document.getElementById(`popup-post${i}`);
+    let popup = document.getElementById('popup-post');
+    popup.innerHTML = '';
+    popup.innerHTML = popupTemplateHTML(i);
     popup.style.display = "block";
 }
 

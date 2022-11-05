@@ -46,14 +46,17 @@ function pushComment() {
 }
 
 
-function openPost(i) {
+function openPost(i, author, author_image, location, date, image, description, likes, author_comment, comment) {
     let popup = document.getElementById('popup-post');
+    let postImage = document.getElementById('post-image');
     popup.innerHTML = '';
-    popup.innerHTML = popupTemplateHTML(i);
+    popup.innerHTML = popupTemplateHTML(i, author, author_image, location, date, image, description, likes, author_comment, comment);
     popup.style.display = "block";
+    postImage.style.cursor = "none";
+    
 }
 
-function closePost(i) {
-    let popup = document.getElementById(`popup-post${i}`);
+function closePost() {
+    let popup = document.getElementById(`popup-post`);
     popup.style.display = "none";
 }

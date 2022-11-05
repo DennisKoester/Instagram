@@ -13,7 +13,7 @@ function postTemplateHTML(i, author, author_image, location, date, image, descri
                 </div>
                 <img class="dots" src="img/icons/icons8-dots-loading-30.png" alt="Dots">
             </div>
-            <img  onclick="openPost(${i})" class="post-image" src="${image}" alt="">
+            <img  onclick="openPost(${i}, '${author}', '${author_image}', '${location}', '${date}', '${image}', '${description}', '${likes}', '${author_comment}', '${comment}')" class="post-image" src="${image}" alt="Post Image">
             <div class="post-footer">
                 <div><span class="material-symbols-outlined heart">
                         favorite
@@ -53,9 +53,9 @@ function postTemplateHTML(i, author, author_image, location, date, image, descri
         </div>`
 }
 
-function popupTemplateHTML(i) {
+function popupTemplateHTML(i, author, author_image, location, date, image, description, likes, author_comment, comment) {
     return /*html*/ `
-<div onclick="closePost(${i})" class="close-btn"><span class="material-symbols-outlined">
+<div onclick="closePost()" class="close-btn"><span class="material-symbols-outlined">
                 close
             </span>
         </div>
@@ -73,7 +73,7 @@ function popupTemplateHTML(i) {
                     </div>
                     <img class="dots" src="img/icons/icons8-dots-loading-30.png" alt="Dots">
                 </div>
-                <img  onclick="openPost(${i})" class="post-image" src="${image}" alt="">
+                <img id="post-image"  class="post-image" src="${image}" alt="">
                 <div class="post-footer">
                     <div><span class="material-symbols-outlined heart">
                             favorite

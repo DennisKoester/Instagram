@@ -55,7 +55,8 @@
 /* Story Section */
 
 .story-container {
-    margin: 15px;
+    margin: 20px auto 50px auto;
+    width: 95%;
 }
 
 .story-timeline {
@@ -121,7 +122,7 @@
 
 .post-timeline {
     margin: 20px auto 50px auto;
-    width: 98%;
+    width: 95%;
     max-width: 450px;
     min-height: 100vh;
 }
@@ -189,7 +190,7 @@
     margin-top: 10px;
     width: 100%;
     height: auto;
-    max-height: 550px;
+    max-height: 450px;
     object-fit: contain;
     cursor: pointer;
 }

@@ -73,7 +73,7 @@ function popupTemplateHTML(i, author, author_image, location, date, image, descr
                     </div>
                     <img class="dots" src="img/icons/icons8-dots-loading-30.png" alt="Dots">
                 </div>
-                <img id="post-image"  class="post-image" src="${image}" alt="">
+                <img id="post-image"  class="post-image" src="${image}" alt="" style="cursor: default;">
                 <div class="post-footer">
                     <div><span class="material-symbols-outlined heart">
                             favorite

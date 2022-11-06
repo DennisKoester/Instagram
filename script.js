@@ -48,15 +48,19 @@ function pushComment() {
 
 function openPost(i, author, author_image, location, date, image, description, likes, author_comment, comment) {
     let popup = document.getElementById('popup-post');
-    let postImage = document.getElementById('post-image');
+    let bodyhtml = document.getElementById('body');
     popup.innerHTML = '';
     popup.innerHTML = popupTemplateHTML(i, author, author_image, location, date, image, description, likes, author_comment, comment);
-    popup.style.display = "block";
-    postImage.style.cursor = "none";
-    
+    popup.classList.remove("d-none");
+    bodyhtml.classList.add("no-scroll");
+
+
+
 }
 
 function closePost() {
     let popup = document.getElementById(`popup-post`);
-    popup.style.display = "none";
+    let bodyhtml = document.getElementById('body');
+    bodyhtml.classList.remove("no-scroll");
+    popup.classList.add("d-none");
 }

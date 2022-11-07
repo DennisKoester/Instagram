@@ -91,21 +91,35 @@ function closePost() {
 
 function bookmark(i) {
     let bookmark = document.getElementById(`bookmark${i}`);
+    let bookmarkCheck = posts[i].bookmarkCheck;
 
-    bookmark.classList.toggle('bookmarked');
+    if (!bookmarkCheck) {
+        bookmark.classList.add('bookmarked');
+        posts[i].bookmarkCheck = true;
+    } else {
+        bookmark.classList.remove('bookmarked');
+        posts[i].bookmarkCheck = false;
+    }
 }
 
 
 function like(i, likes) {
     let like = document.getElementById(`like${i}`);
+    let likeId = document.getElementById(`likeId${i}`);
+    let likecheck = posts[i].likecheck;
 
 
-    like.classList.add('liked');
-    likes++;
-    renderPosts();
+    if (!likecheck) {
+        like.classList.add('liked');
+        posts[i]['likes'] += 1;
+        likes++;
+        posts[i].likecheck = true;
+    } else {
+        like.classList.remove('liked');
+        posts[i]['likes'] -= 1;
+        posts[i].likecheck = false;
+    }
 
-    // } else {
-    //     like.classList.remove('liked');
-    //     likes--;
-    // }
+    likeId.innerHTML = `<b>${likes} likes</b>`;
+
 }

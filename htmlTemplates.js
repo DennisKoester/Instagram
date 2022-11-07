@@ -31,7 +31,7 @@ function postTemplateHTML(i, author, author_image, location, date, image, descri
                     </span>
                 </div>
             </div>
-            <div class="likes"><b>${likes} likes</b></div>
+            <div id="likeId${i}" class="likes"><b>${likes} likes</b></div>
             <div class="description"><b>${author}</b> ${description}</div>
             <div class="comment-section">
                 <div id="comments${i}"></div>

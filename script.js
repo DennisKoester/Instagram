@@ -51,17 +51,19 @@ function addComment(index) {
 
 
 function renderComments(i, post) {
-    let comments = document.getElementById(`comment${i}`);
+    let comments = document.getElementById(`comments${i}`);
     comments.innerHTML = '';
 
     for (let j = 0; j < post['comments'].length; j++) {
         const comment = post['comments'][j];
         const author_comment = post['author_comment'][j];
         comments.innerHTML += `
+            <div class="comment">
                 <div><b>${author_comment}</b> ${comment}</div>
                 <div class="comment-heart"><span class="material-symbols-outlined comment-heart">
                 favorite
-            </span></div>`;
+                </span></div>
+            </div>`;
     }
 }
 
@@ -77,8 +79,26 @@ function openPost(i, author, author_image, location, date, image, description, l
 
 
 function closePost() {
-    let popup = document.getElementById(`popup-post`);
+    let popup = document.getElementById('popup-post');
     let bodyhtml = document.getElementById('body');
     bodyhtml.classList.remove("no-scroll");
     popup.classList.add("d-none");
+}
+
+function bookmark(i) {
+    let bookmark = document.getElementById(`bookmark${i}`);
+
+    bookmark.classList.toggle("bookmarked");
+}
+
+function like(i) {
+    let like = document.getElementById(`like${i}`);
+    let likes = posts['likes'][i];
+
+    if (!like) {
+        
+    } else {
+
+    }
+
 }

@@ -231,7 +231,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
 
+.comments {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .comment-heart span {
@@ -335,6 +340,22 @@
 
 .no-scroll {
     overflow: hidden;
+}
+
+.bookmarked {
+  font-variation-settings:
+  'FILL' 1
+}
+
+/* TODO is there a better way?? Marge them?! */
+
+.liked {
+    font-variation-settings:
+    'FILL' 1
+}
+
+.liked {
+    color: red;
 }
 
 @media(max-width:380px) {

@@ -15,7 +15,7 @@ function postTemplateHTML(i, author, author_image, location, date, image, descri
             </div>
             <img  onclick="openPost(${i}, '${author}', '${author_image}', '${location}', '${date}', '${image}', '${description}', '${likes}', '${author_comment}', '${comment}')" class="post-image" src="${image}" alt="Post Image">
             <div class="post-footer">
-                <div><span class="material-symbols-outlined heart">
+                <div onclick="like(${i})"><span id="like${i}" class="material-symbols-outlined heart">
                         favorite
                     </span>
                     <span class="material-symbols-outlined bubble">
@@ -25,8 +25,8 @@ function postTemplateHTML(i, author, author_image, location, date, image, descri
                         send
                     </span>
                 </div>
-                <div>
-                    <span class="material-symbols-outlined bookmark">
+                <div onclick="bookmark(${i})">
+                    <span id="bookmark${i}" class="material-symbols-outlined bookmark">
                         bookmark
                     </span>
                 </div>
@@ -34,12 +34,7 @@ function postTemplateHTML(i, author, author_image, location, date, image, descri
             <div class="likes"><b>${likes} likes</b></div>
             <div class="description"><b>${author}</b> ${description}</div>
             <div class="comment-section">
-                <div id="comment${i}" class="comment">
-                    <div><b>${author_comment}</b> ${comment}</div>
-                    <div class="comment-heart"><span class="material-symbols-outlined comment-heart">
-                            favorite
-                        </span></div>
-                </div>
+                <div id="comments${i}"></div>
                 <div class="add-comment-section">
                     <form action="">
                         <input id="input-comment${i}" class="input-comment" type="text" placeholder="Add a comment...">
@@ -94,7 +89,7 @@ function popupTemplateHTML(i, author, author_image, location, date, image, descr
                 <div class="likes"><b>${likes} likes</b></div>
                 <div class="description"><b>${author}</b> ${description}</div>
                 <div class="comment-section">
-                    <div class="comment"></div>
+                <div id="comments${i}"></div>
                     <div class="add-comment-section">
                         <form action="">
                             <input id="input-comment${i}" class="input-comment" type="text" placeholder="Add a comment...">

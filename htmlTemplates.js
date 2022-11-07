@@ -34,7 +34,7 @@ function postTemplateHTML(i, author, author_image, location, date, image, descri
             <div class="likes"><b>${likes} likes</b></div>
             <div class="description"><b>${author}</b> ${description}</div>
             <div class="comment-section">
-                <div class="comment">
+                <div id="comment${i}" class="comment">
                     <div><b>${author_comment}</b> ${comment}</div>
                     <div class="comment-heart"><span class="material-symbols-outlined comment-heart">
                             favorite
@@ -43,7 +43,7 @@ function postTemplateHTML(i, author, author_image, location, date, image, descri
                 <div class="add-comment-section">
                     <form action="">
                         <input id="input-comment${i}" class="input-comment" type="text" placeholder="Add a comment...">
-                        <button onclick="pushComment(${i})" type="button">Send</button>
+                        <button onclick="addComment(${i})" type="button">Send</button>
                 </form>
                     <div class="emoji"><span class="material-symbols-outlined">
                             sentiment_satisfied
@@ -94,16 +94,11 @@ function popupTemplateHTML(i, author, author_image, location, date, image, descr
                 <div class="likes"><b>${likes} likes</b></div>
                 <div class="description"><b>${author}</b> ${description}</div>
                 <div class="comment-section">
-                    <div class="comment">
-                        <div><b>${author_comment}</b> ${comment}</div>
-                        <div class="comment-heart"><span class="material-symbols-outlined comment-heart">
-                                favorite
-                            </span></div>
-                    </div>
+                    <div class="comment"></div>
                     <div class="add-comment-section">
                         <form action="">
                             <input id="input-comment${i}" class="input-comment" type="text" placeholder="Add a comment...">
-                            <button onclick="pushComment(${i})" type="button">Send</button>
+                            <button onclick="addComment(${i})" type="button">Send</button>
                     </form>
                         <div class="emoji"><span class="material-symbols-outlined">
                                 sentiment_satisfied

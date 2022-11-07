@@ -12,6 +12,7 @@ async function includeHTML() {
     }
 }
 
+
 function init() {
     includeHTML();
     renderPosts();
@@ -19,9 +20,11 @@ function init() {
 
 
 function renderPosts() {
+    let post_content = document.getElementById('post-timeline');
+    post_content.innerHTML = '';
 
     for (let i = 0; i < posts.length; i++) {
-        let post = document.getElementById('post-timeline');
+        let post = posts[i];
         let author = posts[i]['author'];
         let author_image = posts[i]['author_image'];
         let location = posts[i]['location'];
@@ -29,20 +32,37 @@ function renderPosts() {
         let image = posts[i]['image'];
         let description = posts[i]['description'];
         let likes = posts[i]['likes'];
-        let author_comment = posts[i]['author_comment'];
-        let comment = posts[i]['comments'];
 
-        post.innerHTML += postTemplateHTML(i, author, author_image, location, date, image, description, likes, author_comment, comment);
+        post_content.innerHTML += postTemplateHTML(i, author, author_image, location, date, image, description, likes);
+
+        renderComments(i, post);
     }
 }
 
-function pushComment() {
-    let comment = document.getElementById('input-comment').value;
 
-    posts['author_comment'].push("Guest User")
-    posts['comments'].push(comment)
+function addComment(index) {
+    let input = document.getElementById(`input-comment${index}`).value;
+    posts[index]['comments'].push(input);
 
-    comment.innerHTML = '';
+    input.value = '';
+
+    renderPosts();
+}
+
+
+function renderComments(i, post) {
+    let comments = document.getElementById(`comment${i}`);
+    comments.innerHTML = '';
+
+    for (let j = 0; j < post['comments'].length; j++) {
+        const comment = post['comments'][j];
+        const author_comment = post['author_comment'][j];
+        comments.innerHTML += `
+                <div><b>${author_comment}</b> ${comment}</div>
+                <div class="comment-heart"><span class="material-symbols-outlined comment-heart">
+                favorite
+            </span></div>`;
+    }
 }
 
 
@@ -53,10 +73,8 @@ function openPost(i, author, author_image, location, date, image, description, l
     popup.innerHTML = popupTemplateHTML(i, author, author_image, location, date, image, description, likes, author_comment, comment);
     popup.classList.remove("d-none");
     bodyhtml.classList.add("no-scroll");
-
-
-
 }
+
 
 function closePost() {
     let popup = document.getElementById(`popup-post`);

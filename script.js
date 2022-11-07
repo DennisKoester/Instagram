@@ -21,7 +21,7 @@ function init() {
 
 function renderPosts() {
     let post_content = document.getElementById('post-timeline');
-    post_content.innerHTML = '';
+    // post_content.innerHTML = '';
 
     for (let i = 0; i < posts.length; i++) {
         let post = posts[i];
@@ -42,11 +42,14 @@ function renderPosts() {
 
 function addComment(index) {
     let input = document.getElementById(`input-comment${index}`).value;
-    posts[index]['comments'].push(input);
 
+    if (input.length >= 1) {
+        posts[index]['comments'].push(input);
+        renderPosts();
+    } else {
+        alert('At least one character please.')
+    }
     input.value = '';
-
-    renderPosts();
 }
 
 
@@ -73,32 +76,36 @@ function openPost(i, author, author_image, location, date, image, description, l
     let bodyhtml = document.getElementById('body');
     popup.innerHTML = '';
     popup.innerHTML = popupTemplateHTML(i, author, author_image, location, date, image, description, likes, author_comment, comment);
-    popup.classList.remove("d-none");
-    bodyhtml.classList.add("no-scroll");
+    popup.classList.remove('d-none');
+    bodyhtml.classList.add('no-scroll');
 }
 
 
 function closePost() {
     let popup = document.getElementById('popup-post');
     let bodyhtml = document.getElementById('body');
-    bodyhtml.classList.remove("no-scroll");
-    popup.classList.add("d-none");
+    bodyhtml.classList.remove('no-scroll');
+    popup.classList.add('d-none');
 }
+
 
 function bookmark(i) {
     let bookmark = document.getElementById(`bookmark${i}`);
 
-    bookmark.classList.toggle("bookmarked");
+    bookmark.classList.toggle('bookmarked');
 }
 
-function like(i) {
+
+function like(i, likes) {
     let like = document.getElementById(`like${i}`);
-    let likes = posts['likes'][i];
 
-    if (!like) {
-        
-    } else {
 
-    }
+    like.classList.add('liked');
+    likes++;
+    renderPosts();
 
+    // } else {
+    //     like.classList.remove('liked');
+    //     likes--;
+    // }
 }

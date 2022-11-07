@@ -6,7 +6,7 @@ let posts = [
         'date': '1',
         'image': 'img/Sunset lover.jpg',
         'description': 'Sunset Lover',
-        'likes': '129',
+        'likes': 129,
         'author_comment': ['Bullitourer'],
         'comments': ['Nice Sunset!!']
     },
@@ -18,7 +18,7 @@ let posts = [
         'date': '3',
         'image': 'img/porsche_bulli.jpeg',
         'description': 'Lieber mit dem Bulli an den Strand, als mit dem Porsche zur Scheune 🤭',
-        'likes': '325',
+        'likes': 325,
         'author_comment': ['Dennis Köster'],
         'comments': ['Taking both tho..']
     },
@@ -30,7 +30,7 @@ let posts = [
         'date': '5',
         'image': 'img/DSC00412.jpg',
         'description': 'Shanghai Skyscrapers',
-        'likes': '325',
+        'likes': 254,
         'author_comment': ['Hans Dieter'],
         'comments': ['Sick shot!!']
     },
@@ -42,7 +42,7 @@ let posts = [
         'date': '12',
         'image': 'img/DCF41040-03ED-4473-8266-2371A4B4EEF1_1_105_c.jpeg',
         'description': 'Bike Park Willingen',
-        'likes': '325',
+        'likes': 371,
         'author_comment': ['Dennis Köster'],
         'comments': ['Ride Safe']
     },

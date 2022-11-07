@@ -15,7 +15,7 @@ function postTemplateHTML(i, author, author_image, location, date, image, descri
             </div>
             <img  onclick="openPost(${i}, '${author}', '${author_image}', '${location}', '${date}', '${image}', '${description}', '${likes}', '${author_comment}', '${comment}')" class="post-image" src="${image}" alt="Post Image">
             <div class="post-footer">
-                <div onclick="like(${i})"><span id="like${i}" class="material-symbols-outlined heart">
+                <div><span onclick="like(${i}, ${likes})" id="like${i}" class="material-symbols-outlined heart">
                         favorite
                     </span>
                     <span class="material-symbols-outlined bubble">

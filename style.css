@@ -430,7 +430,13 @@
 }
 
 @media(min-width: 1200px) {
-    .side-container {
+
+    .left-container {
+        width: 65%;
+    }
+
+    .right-container {
         display: block;
+        width: 35%;
     }
 }

@@ -104,3 +104,110 @@ function popupTemplateHTML(i, author, author_image, location, date, image, descr
         </div>`
 }
 
+
+function storyTimelineHTML() {
+    return /*html*/ `
+    <div class="story-timeline">
+                    <div class="story-profile">
+                        <div class="story-photo"><img src="img/gehlert-852762_640.jpg" alt="Story-Photo"></div>
+                        <div class="profile-name">Hans Peter</div>
+                    </div>
+                    <div class="story-profile">
+                        <div class="story-photo"><img src="img/girl-2696947_640.jpg" alt="Story-Photo"></div>
+                        <div class="profile-name">Maria van der Garden</div>
+                    </div>
+                    <div class="story-profile">
+                        <div class="story-photo"><img src="img/happy-1836445_640.jpg" alt="Story-Photo"></div>
+                        <div class="profile-name">Wilhelm Hauser</div>
+                    </div>
+                    <div class="story-profile">
+                        <div class="story-photo"><img src="img/ma.jpg" alt="Story-Photo"></div>
+                        <div class="profile-name">Beardy Dean</div>
+                    </div>
+                    <div class="story-profile">
+                        <div class="story-photo"><img src="img/man-930397_640.jpg" alt="Story-Photo"></div>
+                        <div class="profile-name">Dieter Belm</div>
+                    </div>
+                    <div class="story-profile">
+                        <div class="story-photo"><img src="img/smile-2072907_640.jpg" alt="Story-Photo"></div>
+                        <div class="profile-name">travelogia</div>
+                    </div>
+                    <div class="story-profile">
+                        <div class="story-photo"><img src="img/woman-1146038_640.jpg" alt="Story-Photo"></div>
+                        <div class="profile-name">fashionstyle</div>
+                    </div>
+                    <div class="story-profile">
+                        <div class="story-photo"><img src="img/woman-2563491_640.jpg" alt="Story-Photo"></div>
+                        <div class="profile-name">logia</div>
+                    </div>
+                </div>`
+}
+
+
+function recommendationsHTML() {
+    return /*html*/ `
+    <section class="side-container">
+                <div class="profile-container">
+                    <div class="my-profile"><img src="img/IMG_1220.JPG" alt="Profil Image">
+                        <div>
+                            <div><b>Stay_abroad</b></div>
+                            <div style="color: gray;">Dennis Köster</div>
+                        </div>
+                    </div>
+                    <div class="blue-and-pointer"><b>Change</b></div>
+                </div>
+
+                <div class="recommendations">
+                    <div class="header-recommendations">
+                        <span style="color: gray"><b>Recommendations for you</b></span>
+                        <span><b>See all</b></span>
+                    </div>
+                    <div class="profile-container">
+                        <div class="profile"><img src="img/woman-1146038_640.jpg" alt="Profil Image">
+                            <div>
+                                <div><b>luisarpunkt</b></div>
+                                <div class="follow-text">follows you</div>
+                            </div>
+                        </div>
+                        <div class="blue-and-pointer"><b>Follow</b></div>
+                    </div>
+                    <div class="profile-container">
+                        <div class="profile"><img src="img/gehlert-852762_640.jpg" alt="Profil Image">
+                            <div>
+                                <div><b>andreaslobrecht</b></div>
+                                <div class="follow-text">follows you</div>
+                            </div>
+                        </div>
+                        <div class="blue-and-pointer"><b>Follow</b></div>
+                    </div>
+                    <div class="profile-container">
+                        <div class="profile"><img src="img/man-930397_640.jpg" alt="Profil Image">
+                            <div>
+                                <div><b>karlheinz</b></div>
+                                <div class="follow-text">follows you</div>
+                            </div>
+                        </div>
+                        <div class="blue-and-pointer"><b>Follow</b></div>
+                    </div>
+                    <div class="profile-container">
+                        <div class="profile"><img src="img/woman-2563491_640.jpg" alt="Profil Image">
+                            <div>
+                                <div><b>evalech</b></div>
+                                <div class="follow-text">follows you</div>
+                            </div>
+                        </div>
+                        <div class="blue-and-pointer"><b>Follow</b></div>
+                    </div>
+                    <div class="profile-container">
+                        <div class="profile"><img src="img/smile-2072907_640.jpg" alt="Profil Image">
+                            <div>
+                                <div><b>marialoh</b></div>
+                                <div class="follow-text">follows you</div>
+                            </div>
+                        </div>
+                        <div class="blue-and-pointer"><b>Follow</b></div>
+                    </div>
+            </section>
+        </div>`
+}
+

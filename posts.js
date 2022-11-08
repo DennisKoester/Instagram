@@ -1,6 +1,6 @@
 let posts = [
     {
-        'author': 'Dennis Köster',
+        'author': 'Stay_abroad',
         'author_image': 'img/IMG_1220.JPG',
         'location': 'Münster',
         'date': '1',
@@ -24,7 +24,7 @@ let posts = [
     },
 
     {
-        'author': 'Dennis Köster',
+        'author': 'Stay_Abroad',
         'author_image': 'img/IMG_1220.JPG',
         'location': 'Shanghai',
         'date': '5',

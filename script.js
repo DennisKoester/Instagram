@@ -16,8 +16,12 @@ async function includeHTML() {
 function init() {
     includeHTML();
     renderPosts();
+    renderStoryTimeline();
+    renderRecommendations();
 }
 
+
+// Render Section
 
 function renderPosts() {
     let post_content = document.getElementById('post-timeline');
@@ -40,19 +44,6 @@ function renderPosts() {
 }
 
 
-function addComment(index) {
-    let input = document.getElementById(`input-comment${index}`).value;
-
-    if (input.length >= 1) {
-        posts[index]['comments'].push(input);
-        renderPosts();
-    } else {
-        alert('At least one character please.')
-    }
-    input.value = '';
-}
-
-
 function renderComments(i, post) {
     let comments = document.getElementById(`comments${i}`);
     comments.innerHTML = '';
@@ -60,17 +51,31 @@ function renderComments(i, post) {
     for (let j = 0; j < post['comments'].length; j++) {
         const comment = post['comments'][j];
         comments.innerHTML += `
-            <div class="comment">
-                <div><b>Tom Schlesig</b> ${comment}</div>
-                <div class="comment-heart"><span onclick="deleteComment(${i}, ${j})" class="material-symbols-outlined">
-                close
-            </span><span onclick="likeComment(${i}, ${j})" id="likeComment${i}, ${j}" class="material-symbols-outlined comment-heart">
-                favorite
-                </span></div>
-            </div>`;
+        <div class="comment">
+        <div><b>Tom Schlesig</b> ${comment}</div>
+        <div class="comment-heart"><span onclick="deleteComment(${i}, ${j})" class="material-symbols-outlined">
+        close
+        </span><span onclick="likeComment(${i}, ${j})" id="likeComment${i}, ${j}" class="material-symbols-outlined comment-heart">
+        favorite
+        </span></div>
+        </div>`;
     }
 }
 
+
+function renderStoryTimeline() {
+    let stories = document.getElementById('story-timeline');
+    stories.innerHTML = storyTimelineHTML();
+}
+
+
+function renderRecommendations() {
+    let recommendations = document.getElementById('recommendations');
+    recommendations.innerHTML = recommendationsHTML();
+}
+
+
+// Post Section
 
 function openPost(i, author, author_image, location, date, image, description, likes, author_comment, comment) {
     let popup = document.getElementById('popup-post');
@@ -89,6 +94,8 @@ function closePost() {
     popup.classList.add('d-none');
 }
 
+
+// Interactive Section
 
 function bookmark(i) {
     let bookmark = document.getElementById(`bookmark${i}`);
@@ -131,6 +138,21 @@ function likeComment(i, j) {
     let likeComment = document.getElementById(`likeComment${i}, ${j}`);
 
     likeComment.classList.toggle('liked');
+}
+
+
+// Comment Section
+
+function addComment(index) {
+    let input = document.getElementById(`input-comment${index}`).value;
+
+    if (input.length >= 1) {
+        posts[index]['comments'].push(input);
+        renderPosts();
+    } else {
+        alert('At least one character please.')
+    }
+    input.value = '';
 }
 
 

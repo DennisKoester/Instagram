@@ -230,12 +230,16 @@
 .comment {
     display: flex;
     justify-content: space-between;
-    align-items: center;
 }
 
 .comments {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.comment-heart {
+    display: flex;
     align-items: center;
 }
 

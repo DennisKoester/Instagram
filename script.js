@@ -62,7 +62,9 @@ function renderComments(i, post) {
         comments.innerHTML += `
             <div class="comment">
                 <div><b>Tom Schlesig</b> ${comment}</div>
-                <div class="comment-heart"><span onclick="deleteComment(${i}, ${j})">X  </span><span onclick="likeComment(${j})" id="likeComment${j}" class="material-symbols-outlined comment-heart">
+                <div class="comment-heart"><span onclick="deleteComment(${i}, ${j})" class="material-symbols-outlined">
+                close
+            </span><span onclick="likeComment(${i}, ${j})" id="likeComment${i}, ${j}" class="material-symbols-outlined comment-heart">
                 favorite
                 </span></div>
             </div>`;
@@ -123,8 +125,8 @@ function like(i, likes) {
 }
 
 
-function likeComment(j) {
-    let likeComment = document.getElementById(`likeComment${j}`);
+function likeComment(i, j) {
+    let likeComment = document.getElementById(`likeComment${i}, ${j}`);
 
     likeComment.classList.toggle('liked');
 }

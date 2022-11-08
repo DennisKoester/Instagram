@@ -59,11 +59,10 @@ function renderComments(i, post) {
 
     for (let j = 0; j < post['comments'].length; j++) {
         const comment = post['comments'][j];
-        const author_comment = post['author_comment'][j];
         comments.innerHTML += `
             <div class="comment">
-                <div><b>${author_comment}</b> ${comment}</div>
-                <div class="comment-heart"><span class="material-symbols-outlined comment-heart">
+                <div><b>Tom Schlesig</b> ${comment}</div>
+                <div class="comment-heart"><span onclick="deleteComment(${i}, ${j})">X  </span><span onclick="likeComment(${j})" id="likeComment${j}" class="material-symbols-outlined comment-heart">
                 favorite
                 </span></div>
             </div>`;
@@ -108,7 +107,6 @@ function like(i, likes) {
     let likeId = document.getElementById(`likeId${i}`);
     let likecheck = posts[i].likecheck;
 
-
     if (!likecheck) {
         like.classList.add('liked');
         posts[i]['likes'] += 1;
@@ -120,6 +118,34 @@ function like(i, likes) {
         posts[i].likecheck = false;
     }
 
-    likeId.innerHTML = `<b>${likes} likes</b>`;
-
+    likeId.innerHTML = /*html*/ `
+            <b>${likes} likes</b>`;
 }
+
+
+function likeComment(j) {
+    let likeComment = document.getElementById(`likeComment${j}`);
+
+    likeComment.classList.toggle('liked');
+}
+
+
+function deleteComment(i, j) {
+    posts[i]['comments'].splice(j, 1);
+    renderPosts();
+}
+
+
+// TODO What is wrong? I think I need the "i". Different way?!
+
+/* function enterFunction() {
+    let input = document.getElementById(`input-comment${i}`);
+    input.addEventListener("keypress", function (event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            document.getElementById(`input-btn${i}`).click();
+        }
+    });
+}
+ */
+

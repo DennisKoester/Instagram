@@ -343,19 +343,19 @@
 }
 
 .bookmarked {
-  font-variation-settings:
-  'FILL' 1
+    font-variation-settings:
+        'FILL' 1
 }
 
 /* TODO is there a better way?? Marge them?! */
 
 .liked {
     font-variation-settings:
-    'FILL' 1
+        'FILL' 1
 }
 
 .liked {
-    color: red;
+    color: red !important;
 }
 
 @media(max-width:380px) {

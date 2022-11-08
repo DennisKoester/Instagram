@@ -104,6 +104,8 @@ function bookmark(i) {
 }
 
 
+// TODO Is that correct?! It works tho.
+
 function like(i, likes) {
     let like = document.getElementById(`like${i}`);
     let likeId = document.getElementById(`likeId${i}`);
@@ -138,7 +140,7 @@ function deleteComment(i, j) {
 }
 
 
-// TODO What is wrong? I think I need the "i". Different way?!
+// TODO What is wrong? I think I need the "i", but from where? Different way?!
 
 /* function enterFunction() {
     let input = document.getElementById(`input-comment${i}`);

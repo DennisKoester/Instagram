@@ -204,17 +204,6 @@ function follow(i) {
 }
 
 
-/* function redHeartFalseOrTrue(i) {
-    if (posts[i].likecheck == 'false') {
-        posts[i].likecheck = 'true';
-    }
-
-    else {
-        posts[i].likecheck = 'false';
-    }
-} */
-
-
 // TODO What is wrong? I think I need the "i", but from where? Different way?!
 
 /* function enterFunction() {

@@ -61,9 +61,9 @@
 
 .story-timeline {
     margin: auto;
-    padding: 8px;
+    padding: 8px 0 8px 0;
     display: flex;
-    gap: 7px;
+    gap: 4px;
     max-width: 450px;
     overflow-x: auto;
     /* -ms-overflow-style: none; */
@@ -101,7 +101,9 @@
     white-space: nowrap;
     display: flex;
     flex-direction: column;
-    width: 70px;
+    align-items: center;
+    min-width: 70px;
+    max-width: 70px;
     cursor: pointer;
 }
 
@@ -270,7 +272,7 @@
 }
 
 input {
-    max-width: 350px;
+    width: 80%;
 }
 
 form {
@@ -304,6 +306,10 @@ form {
     background-color: white;
 }
 
+.footer-container span {
+    cursor: pointer;
+}
+
 .own-profile-photo img {
     height: 30px;
     width: 30px;
@@ -333,6 +339,7 @@ form {
     transform: translate(-50%, -50%);
     width: 98%;
     max-width: 450px;
+    padding-right: 15px;
 }
 
 .popup-container .post {
@@ -425,6 +432,7 @@ form {
 
 .no-scroll {
     overflow: hidden;
+    padding-right: 15px;
 }
 
 .bookmarked {
@@ -432,14 +440,9 @@ form {
         'FILL' 1
 }
 
-/* TODO Is there a way to marge them? */
-
 .liked {
     font-variation-settings:
-        'FILL' 1
-}
-
-.liked {
+        'FILL' 1;
     color: red !important;
 }
 
@@ -458,5 +461,11 @@ form {
     .right-container {
         display: block;
         width: 35%;
+    }
+}
+
+@media (hover: none) {
+    .story-profile:hover {
+        transform: none;
     }
 }

@@ -8,7 +8,7 @@ let posts = [
         'description': 'Sunset Lover',
         'likes': 129,
         'author_comment': ['Bullitourer'],
-        'comments': ['Nice sunset!!']
+        'comments': ['Nice sunset!!'],
     },
 
     {

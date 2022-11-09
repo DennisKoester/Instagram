@@ -40,6 +40,8 @@ function renderPosts() {
         post_content.innerHTML += postTemplateHTML(i, author, author_image, location, date, image, description, likes);
 
         renderComments(i, post);
+        // checkLikes(i);
+        // like(i, likes);
     }
 }
 
@@ -60,6 +62,7 @@ function renderComments(i, post) {
         </span></div>
         </div>`;
     }
+
 }
 
 
@@ -88,10 +91,12 @@ function renderRecommendations() {
 function openPost(i, author, author_image, location, date, image, description, likes, author_comment, comment) {
     let popup = document.getElementById('popup-post');
     let bodyhtml = document.getElementById('body');
+    let post = posts[i];
     popup.innerHTML = '';
     popup.innerHTML = popupTemplateHTML(i, author, author_image, location, date, image, description, likes, author_comment, comment);
     popup.classList.remove('d-none');
     bodyhtml.classList.add('no-scroll');
+    renderComments(i, post);
 }
 
 
@@ -140,7 +145,7 @@ function bookmark(i) {
 }
 
 
-// TODO Is that correct?! It works tho.
+// TODO Is that correct?! It doesnt render right again!
 
 function like(i, likes) {
     let heart = document.getElementById(`like${i}`);
@@ -148,6 +153,8 @@ function like(i, likes) {
     let likecheck = posts[i].likecheck;
 
     likeId.innerHTML = '';
+
+    //  if(posts[i].likecheck == false)
 
     if (!likecheck) {
         heart.classList.add('liked');
@@ -163,6 +170,17 @@ function like(i, likes) {
     likeId.innerHTML = /*html*/ `
             <b>${likes} likes</b>`;
 }
+
+
+// function checkLikes(i) {
+//     if (posts[i].likecheck == false) {
+//         posts[i].likecheck = true;
+//     }
+
+//     else {
+//         posts[i].likecheck = false;
+//     }
+// }
 
 
 function likeComment(i, j) {
@@ -207,6 +225,4 @@ function follow(i) {
             document.getElementById(`input-btn${i}`).click();
         }
     });
-}
- */
-
+} */

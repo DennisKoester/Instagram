@@ -81,7 +81,7 @@ function renderRecommendations() {
 }
 
 
-// Post Section
+// Post Popup Section
 
 function openPost(i, author, author_image, location, date, image, description, likes, author_comment, comment) {
     let popup = document.getElementById('popup-post');
@@ -90,6 +90,10 @@ function openPost(i, author, author_image, location, date, image, description, l
     popup.innerHTML = popupTemplateHTML(i, author, author_image, location, date, image, description, likes, author_comment, comment);
     popup.classList.remove('d-none');
     bodyhtml.classList.add('no-scroll');
+
+    redHeartFalseOrTrue(i);
+
+    like(i, likes);
 }
 
 
@@ -141,17 +145,19 @@ function bookmark(i) {
 // TODO Is that correct?! It works tho.
 
 function like(i, likes) {
-    let like = document.getElementById(`like${i}`);
+    let heart = document.getElementById(`like${i}`);
     let likeId = document.getElementById(`likeId${i}`);
     let likecheck = posts[i].likecheck;
 
+    likeId.innerHTML = '';
+
     if (!likecheck) {
-        like.classList.add('liked');
+        heart.classList.add('liked');
         posts[i]['likes'] += 1;
         likes++;
         posts[i].likecheck = true;
     } else {
-        like.classList.remove('liked');
+        heart.classList.remove('liked');
         posts[i]['likes'] -= 1;
         posts[i].likecheck = false;
     }
@@ -168,7 +174,7 @@ function likeComment(i, j) {
 }
 
 
-function followToggle(i) {
+function follow(i) {
     let follow = document.getElementById(`follow${i}`);
     let followcheck = recommendations[i].followcheck;
 
@@ -180,6 +186,17 @@ function followToggle(i) {
         recommendations[i].followcheck = false;
     }
 }
+
+function redHeartFalseOrTrue(i) {
+    if (posts[i].likecheck == 'false') {
+        posts[i].likecheck = 'true';
+    }
+
+    else {
+        posts[i].likecheck = 'false';
+    }
+}
+
 
 
 // TODO What is wrong? I think I need the "i", but from where? Different way?!

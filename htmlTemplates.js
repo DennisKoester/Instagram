@@ -38,9 +38,9 @@ function postTemplateHTML(i, author, author_image, location, date, image, descri
                 <div class="add-comment-section">
                     <form action="">
                         <input id="input-comment${i}" class="input-comment" type="text" placeholder="Add a comment...">
-                        <button onclick="addComment(${i})" id="input-btn${i}" type="button">Send</button>
+                        <button onclick="addComment(${i})" id="input-btn${i}" class="send-btn" type="button">Send</button>
                 </form>
-                    <div class="emoji"><span class="material-symbols-outlined">
+                    <div class="emoji"><span class="material-symbols-outlined emoji">
                             sentiment_satisfied
                         </span></div>
                 </div>

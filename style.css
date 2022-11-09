@@ -266,6 +266,26 @@
     font-size: 18px;
     color: gray;
     cursor: pointer;
+    padding-top: 11px;
+}
+
+input {
+    max-width: 350px;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.send-btn {
+    margin-right: 10px;
+    outline: none;
+    border: none;
+    background-color: inherit;
+    color: #0395F6;
+    cursor: pointer;
 }
 
 /* Footer */
@@ -412,7 +432,7 @@
         'FILL' 1
 }
 
-/* TODO is there a better way?? Marge them?! */
+/* TODO Is there a way to marge them? */
 
 .liked {
     font-variation-settings:

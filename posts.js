@@ -1,6 +1,6 @@
 let posts = [
     {
-        'author': 'Stay_abroad',
+        'author': 'stayabroad',
         'author_image': 'img/IMG_1220.JPG',
         'location': 'Münster',
         'date': '1',
@@ -12,7 +12,7 @@ let posts = [
     },
 
     {
-        'author': 'Bullitourer',
+        'author': 'bullitourer',
         'author_image': 'img/bullitourer.jpg',
         'location': 'Somewhere',
         'date': '3',
@@ -24,7 +24,7 @@ let posts = [
     },
 
     {
-        'author': 'Stay_Abroad',
+        'author': 'stayabroad',
         'author_image': 'img/IMG_1220.JPG',
         'location': 'Shanghai',
         'date': '5',
@@ -36,7 +36,7 @@ let posts = [
     },
 
     {
-        'author': 'Hans Dieter',
+        'author': 'hansdieter',
         'author_image': 'img/man-930397_640.jpg',
         'location': 'Willingen',
         'date': '12',

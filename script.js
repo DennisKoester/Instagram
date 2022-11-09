@@ -25,7 +25,7 @@ function init() {
 
 function renderPosts() {
     let post_content = document.getElementById('post-timeline');
-    // post_content.innerHTML = '';
+    post_content.innerHTML = '';
 
     for (let i = 0; i < posts.length; i++) {
         let post = posts[i];
@@ -65,12 +65,14 @@ function renderComments(i, post) {
 
 function renderStoryTimeline() {
     let stories = document.getElementById('story-timeline');
+    stories.innerHTML = '';
     stories.innerHTML = storyTimelineHTML();
 }
 
 
 function renderRecommendations() {
     let recos = document.getElementById('recommendation-profiles');
+    recos.innerHTML = '';
 
     for (let i = 0; i < recommendations.length; i++) {
         let recoName = recommendations[i]['name'];
@@ -90,10 +92,6 @@ function openPost(i, author, author_image, location, date, image, description, l
     popup.innerHTML = popupTemplateHTML(i, author, author_image, location, date, image, description, likes, author_comment, comment);
     popup.classList.remove('d-none');
     bodyhtml.classList.add('no-scroll');
-
-    redHeartFalseOrTrue(i);
-
-    like(i, likes);
 }
 
 
@@ -187,7 +185,8 @@ function follow(i) {
     }
 }
 
-function redHeartFalseOrTrue(i) {
+
+/* function redHeartFalseOrTrue(i) {
     if (posts[i].likecheck == 'false') {
         posts[i].likecheck = 'true';
     }
@@ -195,8 +194,7 @@ function redHeartFalseOrTrue(i) {
     else {
         posts[i].likecheck = 'false';
     }
-}
-
+} */
 
 
 // TODO What is wrong? I think I need the "i", but from where? Different way?!

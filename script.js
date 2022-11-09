@@ -70,8 +70,14 @@ function renderStoryTimeline() {
 
 
 function renderRecommendations() {
-    let recommendations = document.getElementById('recommendations');
-    recommendations.innerHTML = recommendationsHTML();
+    let recos = document.getElementById('recommendation-profiles');
+
+    for (let i = 0; i < recommendations.length; i++) {
+        let recoName = recommendations[i]['name'];
+        let recoImage = recommendations[i]['image'];
+
+        recos.innerHTML += recommendationsHTML(i, recoName, recoImage);
+    }
 }
 
 
@@ -92,6 +98,27 @@ function closePost() {
     let bodyhtml = document.getElementById('body');
     bodyhtml.classList.remove('no-scroll');
     popup.classList.add('d-none');
+}
+
+
+// Comment Section
+
+function addComment(index) {
+    let input = document.getElementById(`input-comment${index}`).value;
+
+    if (input.length >= 1) {
+        posts[index]['comments'].push(input);
+        renderPosts();
+    } else {
+        alert('At least one character please.')
+    }
+    input.value = '';
+}
+
+
+function deleteComment(i, j) {
+    posts[i]['comments'].splice(j, 1);
+    renderPosts();
 }
 
 
@@ -141,24 +168,17 @@ function likeComment(i, j) {
 }
 
 
-// Comment Section
+function followToggle(i) {
+    let follow = document.getElementById(`follow${i}`);
+    let followcheck = recommendations[i].followcheck;
 
-function addComment(index) {
-    let input = document.getElementById(`input-comment${index}`).value;
-
-    if (input.length >= 1) {
-        posts[index]['comments'].push(input);
-        renderPosts();
+    if (!followcheck) {
+        follow.innerHTML = `<b>following</b>`;
+        recommendations[i].followcheck = true;
     } else {
-        alert('At least one character please.')
+        follow.innerHTML = `<b>follow</b>`;
+        recommendations[i].followcheck = false;
     }
-    input.value = '';
-}
-
-
-function deleteComment(i, j) {
-    posts[i]['comments'].splice(j, 1);
-    renderPosts();
 }
 
 

@@ -8,7 +8,7 @@ let posts = [
         'description': 'Sunset Lover',
         'likes': 129,
         'author_comment': ['Bullitourer'],
-        'comments': ['Nice Sunset!!']
+        'comments': ['Nice sunset!!']
     },
 
     {
@@ -44,6 +44,33 @@ let posts = [
         'description': 'Bike Park Willingen',
         'likes': 371,
         'author_comment': ['Dennis Köster'],
-        'comments': ['Ride Safe']
+        'comments': ['Ride safe']
     },
+];
+
+let recommendations = [
+    {
+        'name': 'luisarpunkt',
+        'image': 'img/woman-1146038_640.jpg',
+    },
+
+    {
+        'name': 'andreaslobrecht',
+        'image': 'img/gehlert-852762_640.jpg',
+    },
+
+    {
+        'name': 'karlheinz',
+        'image': 'img/ma.jpg',
+    },
+
+    {
+        'name': 'evalech',
+        'image': 'img/woman-2563491_640.jpg',
+    },
+
+    {
+        'name': 'marialoh',
+        'image': 'img/smile-2072907_640.jpg',
+    }
 ]

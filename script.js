@@ -13,11 +13,12 @@ async function includeHTML() {
 }
 
 
-function init() {
-    includeHTML();
+async function init() {
+    await includeHTML();
     renderPosts();
     renderStoryTimeline();
     renderRecommendations();
+    window.scrollTo(0, 0);
 }
 
 

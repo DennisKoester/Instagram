@@ -40,8 +40,6 @@ function renderPosts() {
         post_content.innerHTML += postTemplateHTML(i, author, author_image, location, date, image, description, likes);
 
         renderComments(i, post);
-        checkLikes(i);
-
     }
 }
 
@@ -112,10 +110,11 @@ function closePost() {
 
 function addComment(index) {
     let input = document.getElementById(`input-comment${index}`).value;
+    let post = posts[index];
 
     if (input.length >= 1) {
         posts[index]['comments'].push(input);
-        renderPosts();
+        renderComments(index, post);
     } else {
         alert('At least one character please.')
     }
@@ -172,7 +171,7 @@ function like(i, likes) {
 }
 
 
-function checkLikes(i) {
+/* function checkLikes(i) {
     if (posts[i].likecheck == false) {
         posts[i].likecheck = true;
     }
@@ -180,7 +179,7 @@ function checkLikes(i) {
     else {
         posts[i].likecheck = false;
     }
-}
+} */
 
 
 function likeComment(i, j) {

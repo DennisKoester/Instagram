@@ -110,11 +110,11 @@ function closePost() {
 // Comment Section
 
 function addComment(index) {
-    let input = document.getElementById(`input-comment${index}`).value;
+    let input = document.getElementById(`input-comment${index}`);
     let post = posts[index];
 
-    if (input.length >= 1) {
-        posts[index]['comments'].push(input);
+    if (input.value.length >= 1) {
+        posts[index]['comments'].push(input.value);
         renderComments(index, post);
     } else {
         alert('At least one character please.')

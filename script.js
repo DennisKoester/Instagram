@@ -1,5 +1,3 @@
-window.onload = function () { window.scrollTop(0); }
-
 async function includeHTML() {
     let includeElements = document.querySelectorAll('[w3-include-html]');
     for (let i = 0; i < includeElements.length; i++) {
@@ -42,8 +40,8 @@ function renderPosts() {
         post_content.innerHTML += postTemplateHTML(i, author, author_image, location, date, image, description, likes);
 
         renderComments(i, post);
-        // checkLikes(i);
-        // like(i, likes);
+        checkLikes(i);
+
     }
 }
 
@@ -122,7 +120,6 @@ function addComment(index) {
         alert('At least one character please.')
     }
     input.value = '';
-    return false;
 }
 
 
@@ -175,15 +172,15 @@ function like(i, likes) {
 }
 
 
-// function checkLikes(i) {
-//     if (posts[i].likecheck == false) {
-//         posts[i].likecheck = true;
-//     }
+function checkLikes(i) {
+    if (posts[i].likecheck == false) {
+        posts[i].likecheck = true;
+    }
 
-//     else {
-//         posts[i].likecheck = false;
-//     }
-// }
+    else {
+        posts[i].likecheck = false;
+    }
+}
 
 
 function likeComment(i, j) {

@@ -1,3 +1,5 @@
+window.onload = function () { window.scrollTop(0); }
+
 async function includeHTML() {
     let includeElements = document.querySelectorAll('[w3-include-html]');
     for (let i = 0; i < includeElements.length; i++) {
@@ -120,6 +122,7 @@ function addComment(index) {
         alert('At least one character please.')
     }
     input.value = '';
+    return false;
 }
 
 
@@ -204,14 +207,14 @@ function follow(i) {
 }
 
 
-// TODO What is wrong? I think I need the "i", but from where? Different way?!
+// To use ENTER for posting comment
 
-/* function enterFunction() {
-    let input = document.getElementById(`input-comment${i}`);
+function enterFunction() {
+    let input = document.getElementById('input-comment');
     input.addEventListener("keypress", function (event) {
         if (event.key === "Enter") {
             event.preventDefault();
-            document.getElementById(`input-btn${i}`).click();
+            document.getElementById('input-btn').click();
         }
     });
-} */
+}

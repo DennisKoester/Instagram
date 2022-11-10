@@ -36,7 +36,7 @@ function postTemplateHTML(i, author, author_image, location, date, image, descri
             <div class="comment-section">
                 <div id="comments${i}"></div>
                 <div class="add-comment-section">
-                    <form action="">
+                    <form action="" onsubmit="addComment(${i})">
                         <input id="input-comment${i}" class="input-comment" type="text" placeholder="Add a comment...">
                         <button onclick="addComment(${i})" id="input-btn${i}" class="send-btn" type="button">Post</button>
                 </form>
@@ -91,7 +91,7 @@ function popupTemplateHTML(i, author, author_image, location, date, image, descr
             <div class="comment-section">
                 <div id="comments${i}"></div>
                 <div class="add-comment-section">
-                    <form action="">
+                    <form action="" onsubmit="addComment(${i})">
                         <input id="input-comment${i}" class="input-comment" type="text" placeholder="Add a comment...">
                         <button onclick="addComment(${i})" id="input-btn${i}" class="send-btn" type="button">Post</button>
                 </form>

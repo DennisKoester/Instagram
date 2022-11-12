@@ -24,6 +24,18 @@ let posts = [
     },
 
     {
+        'author': 'blende_deine_nachbarn',
+        'author_image': 'img/blende.jpeg',
+        'location': 'Somewhere',
+        'date': '12',
+        'image': 'img/clio.jpeg',
+        'description': 'Blende deine Nachbarn ☀️🚕',
+        'likes': 371,
+        'author_comment': ['Dennis Köster'],
+        'comments': ['Nice ride']
+    },
+
+    {
         'author': 'stayabroad',
         'author_image': 'img/IMG_1220.JPG',
         'location': 'Shanghai',
@@ -35,17 +47,6 @@ let posts = [
         'comments': ['Sick shot!!']
     },
 
-    {
-        'author': 'hansdieter',
-        'author_image': 'img/man-930397_640.jpg',
-        'location': 'Willingen',
-        'date': '12',
-        'image': 'img/DCF41040-03ED-4473-8266-2371A4B4EEF1_1_105_c.jpeg',
-        'description': 'Bike Park Willingen',
-        'likes': 371,
-        'author_comment': ['Dennis Köster'],
-        'comments': ['Ride safe']
-    },
 ];
 
 let recommendations = [

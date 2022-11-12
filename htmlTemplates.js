@@ -48,7 +48,7 @@ function postTemplateHTML(i, author, author_image, location, date, image, descri
         </div>`
 }
 
-function popupTemplateHTML(i, author, author_image, location, date, image, description, likes, author_comment, comment) {
+function popupTemplateHTML(i, author, author_image, location, date, image, description, likes) {
     return /*html*/ `
 <div onclick="closePost()" class="close-btn"><span class="material-symbols-outlined">
                 close
@@ -107,7 +107,7 @@ function popupTemplateHTML(i, author, author_image, location, date, image, descr
 
 function storyTimelineHTML() {
     return /*html*/ `
-    <div class="story-timeline">
+                <div class="story-timeline">
                     <div class="story-profile">
                         <div class="story-photo"><img src="img/gehlert-852762_640.jpg" alt="Story-Photo"></div>
                         <div class="profile-name">Hans Peter</div>
@@ -139,8 +139,7 @@ function storyTimelineHTML() {
                     <div class="story-profile">
                         <div class="story-photo"><img src="img/woman-2563491_640.jpg" alt="Story-Photo"></div>
                         <div class="profile-name">logia</div>
-                    </div>
-                </div>`
+                    </div>`
 }
 
 

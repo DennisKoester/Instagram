@@ -87,16 +87,28 @@ function renderRecommendations() {
 
 // Post Popup Section
 
-function openPost(i, author, author_image, location, date, image, description, likes, author_comment, comment) {
+function openPost(i, author, author_image, location, date, image, description, likes) {
     let popup = document.getElementById('popup-post');
     let bodyhtml = document.getElementById('body');
     let post = posts[i];
     popup.innerHTML = '';
-    popup.innerHTML = popupTemplateHTML(i, author, author_image, location, date, image, description, likes, author_comment, comment);
+    popup.innerHTML = popupTemplateHTML(i, author, author_image, location, date, image, description, likes);
     popup.classList.remove('d-none');
     bodyhtml.classList.add('no-scroll');
     renderComments(i, post);
 }
+
+
+/* function openPost(i, author, author_image, location, date, image, description, likes) {
+    let popup = document.getElementById('popup-post');
+    let bodyhtml = document.getElementById('body');
+    let post = posts[i];
+    popup.innerHTML = '';
+    popup.innerHTML = postTemplateHTML(i, author, author_image, location, date, image, description, likes);
+    popup.classList.remove('d-none');
+    bodyhtml.classList.add('no-scroll');
+    renderComments(i, post);
+} */
 
 
 function closePost() {
@@ -145,16 +157,12 @@ function bookmark(i) {
 }
 
 
-// TODO Is that correct?! It doesnt render right again!
-
 function like(i, likes) {
     let heart = document.getElementById(`like${i}`);
     let likeId = document.getElementById(`likeId${i}`);
     let likecheck = posts[i].likecheck;
 
     likeId.innerHTML = '';
-
-    //  if(posts[i].likecheck == false)
 
     if (!likecheck) {
         heart.classList.add('liked');
@@ -170,17 +178,6 @@ function like(i, likes) {
     likeId.innerHTML = /*html*/ `
             <b>${likes} likes</b>`;
 }
-
-
-/* function checkLikes(i) {
-    if (posts[i].likecheck == false) {
-        posts[i].likecheck = true;
-    }
-
-    else {
-        posts[i].likecheck = false;
-    }
-} */
 
 
 function likeComment(i, j) {
@@ -214,4 +211,13 @@ function enterFunction() {
             document.getElementById('input-btn').click();
         }
     });
+}
+
+
+function slideRight() {
+
+}
+
+function slideLeft() {
+
 }

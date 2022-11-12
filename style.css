@@ -63,6 +63,7 @@
     margin: auto;
     padding: 8px 0 8px 0;
     display: flex;
+    align-items: center;
     gap: 4px;
     max-width: 450px;
     overflow-x: auto;
@@ -118,7 +119,6 @@
     width: 100%;
     font-size: 13px;
 }
-
 
 /* Post Timeline */
 
@@ -446,9 +446,13 @@ form {
     color: red !important;
 }
 
-@media(max-width: 380px) {
+@media(max-width: 390px) {
     .search-container {
         display: none;
+    }
+
+    .story-container {
+        margin-bottom: -5px;
     }
 }
 

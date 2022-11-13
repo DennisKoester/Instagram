@@ -9,8 +9,6 @@ let posts = [
         'likes': 129,
         'author_comment': ['Bullitourer'],
         'comments': ['Nice sunset!!'],
-        'likecheck': '',
-        'bookmarkcheck': ''
     },
 
     {
@@ -23,7 +21,6 @@ let posts = [
         'likes': 325,
         'author_comment': ['Dennis Köster'],
         'comments': ['Taking both tho..'],
-        'likecheck': ''
     },
 
     {
@@ -36,7 +33,6 @@ let posts = [
         'likes': 371,
         'author_comment': ['Dennis Köster'],
         'comments': ['Nice ride'],
-        'likecheck': ''
     },
 
     {
@@ -49,7 +45,6 @@ let posts = [
         'likes': 254,
         'author_comment': ['Hans Dieter'],
         'comments': ['Sick shot!!'],
-        'likecheck': ''
     },
 
 ];

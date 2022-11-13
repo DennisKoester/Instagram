@@ -86,7 +86,7 @@ function popupTemplateHTML(i, author, author_image, location, date, image, descr
                     </span>
                 </div>
             </div>
-            <div id="likeId${i}" class="likes"><b>${likes} likes</b></div>
+            <div id="likeIdPopup${i}" class="likes"><b>${likes} likes</b></div>
             <div class="description"><b>${author}</b> ${description}</div>
             <div class="comment-section">
                 <div id="popup-comments${i}"></div>

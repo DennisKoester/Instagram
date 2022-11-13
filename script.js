@@ -117,7 +117,7 @@ function openPost(i, author, author_image, location, date, image, description) {
     bodyhtml.classList.add('no-scroll');
     openPopup = true;
     renderPopupComments(i, post);
-    checkLike(i);
+    renderLike(i, likes);
     renderBookmark(i);
 }
 
@@ -172,30 +172,10 @@ function deleteComment(i, j) {
     } else {
         renderComments(i, post);
     }
-
 }
 
 
 // Interactive Section
-/* 
-function bookmark(i) {
-    let bookmark = document.getElementById(`bookmark${i}`);
-    let bookmarkPopup = document.getElementById(`bookmarkPopup${i}`);
-    // let bookmarkcheck = posts[i].bookmarkcheck;
-
-    if (bookmarkcheck == true && openPopup == true) {
-        bookmark.classList.add('bookmarked');
-        bookmarkPopup.classList.add('bookmarked');
-        posts[i].bookmarkcheck = true;
-
-    } else if (!bookmarkcheck) {
-        bookmark.classList.add('bookmarked');
-        posts[i].bookmarkcheck = true;
-    } else
-        bookmark.classList.remove('bookmarked');
-    // posts[i].bookmarkcheck = false;
-
-} */
 
 function bookmark(i) {
     let bookmarkcheck = posts[i].bookmarkcheck;
@@ -230,38 +210,44 @@ function renderBookmark(i) {
 
 
 function like(i, likes) {
-    let heart = document.getElementById(`like${i}`);
-    // let heartPopup = document.getElementById(`likepopup${i}`)
-    let likeId = document.getElementById(`likeId${i}`);
     let likecheck = posts[i].likecheck;
 
-    likeId.innerHTML = '';
-
     if (!likecheck) {
-        heart.classList.add('liked');
         posts[i]['likes'] += 1;
         likes++;
         posts[i].likecheck = true;
     } else {
-        heart.classList.remove('liked');
         posts[i]['likes'] -= 1;
         posts[i].likecheck = false;
     }
 
-    likeId.innerHTML = /*html*/ `
-            <b>${likes} likes</b>`;
+    renderLike(i, likes);
 }
 
 
-function checkLike(i) {
-    let heart = document.getElementById(`like-popup${i}`);
+function renderLike(i, likes) {
+    let heart = document.getElementById(`like${i}`);
+    let heartPopup = document.getElementById(`like-popup${i}`);
+    let likeId = document.getElementById(`likeId${i}`);
+    let likeIdPopup = document.getElementById(`likeIdPopup${i}`);
+    let likecheck = posts[i].likecheck;
 
-    if (posts[i].likecheck == true) {
+    if (likecheck == true && openPopup == true) {
         heart.classList.add('liked');
+        heartPopup.classList.add('liked');
 
+    } else if (likecheck == true) {
+        heart.classList.add('liked');
+    } else if (openPopup == true) {
+        heartPopup.classList.remove('liked');
+        heart.classList.remove('liked');
     } else {
         heart.classList.remove('liked');
     }
+    likeIdPopup.innerHTML = /*html*/ `
+            <b>${likes} likes</b>`;
+    likeId.innerHTML = /*html*/ `
+            <b>${likes} likes</b>`;
 }
 
 

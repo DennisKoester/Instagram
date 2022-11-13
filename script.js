@@ -1,3 +1,5 @@
+let openPopup = false;
+
 async function includeHTML() {
     let includeElements = document.querySelectorAll('[w3-include-html]');
     for (let i = 0; i < includeElements.length; i++) {
@@ -113,6 +115,7 @@ function openPost(i, author, author_image, location, date, image, description) {
     popup.classList.remove('d-none');
     popup.innerHTML = popupTemplateHTML(i, author, author_image, location, date, image, description, likes);
     bodyhtml.classList.add('no-scroll');
+    openPopup = true;
     renderPopupComments(i, post);
     checkLike(i);
 }
@@ -123,6 +126,7 @@ function closePost() {
     let bodyhtml = document.getElementById('body');
     bodyhtml.classList.remove('no-scroll');
     popup.classList.add('d-none');
+    openPopup = false;
 }
 
 
@@ -160,8 +164,14 @@ function addPopupComment(index) {
 function deleteComment(i, j) {
     post = posts[i];
     posts[i]['comments'].splice(j, 1);
-    renderComments(i, post);
-    renderPopupComments(i, post);
+
+    if (openPopup == true) {
+        renderComments(i, post);
+        renderPopupComments(i, post);
+    } else {
+        renderComments(i, post);
+    }
+
 }
 
 

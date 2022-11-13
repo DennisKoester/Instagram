@@ -209,43 +209,43 @@ function renderBookmark(i) {
 }
 
 
-function like(i, likes) {
+function like(i) {
     let likecheck = posts[i].likecheck;
 
     if (!likecheck) {
         posts[i]['likes'] += 1;
-        likes++;
         posts[i].likecheck = true;
     } else {
         posts[i]['likes'] -= 1;
         posts[i].likecheck = false;
     }
-
-    renderLike(i, likes);
+    renderLike(i);
 }
 
 
-function renderLike(i, likes) {
+function renderLike(i) {
     let heart = document.getElementById(`like${i}`);
     let heartPopup = document.getElementById(`like-popup${i}`);
     let likeId = document.getElementById(`likeId${i}`);
     let likeIdPopup = document.getElementById(`likeIdPopup${i}`);
     let likecheck = posts[i].likecheck;
+    let likes = posts[i]['likes'];
 
     if (likecheck == true && openPopup == true) {
         heart.classList.add('liked');
         heartPopup.classList.add('liked');
-
+        likeIdPopup.innerHTML = /*html*/ `
+            <b>${likes} likes</b>`;
     } else if (likecheck == true) {
         heart.classList.add('liked');
     } else if (openPopup == true) {
         heartPopup.classList.remove('liked');
         heart.classList.remove('liked');
+        likeIdPopup.innerHTML = /*html*/ `
+            <b>${likes} likes</b>`;
     } else {
         heart.classList.remove('liked');
     }
-    likeIdPopup.innerHTML = /*html*/ `
-            <b>${likes} likes</b>`;
     likeId.innerHTML = /*html*/ `
             <b>${likes} likes</b>`;
 }

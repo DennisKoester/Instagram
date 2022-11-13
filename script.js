@@ -64,6 +64,25 @@ function renderComments(i, post) {
 
 }
 
+function renderPopupComments(i, post) {
+    let comments = document.getElementById(`popup-comments${i}`);
+    comments.innerHTML = '';
+
+    for (let j = 0; j < post['comments'].length; j++) {
+        const comment = post['comments'][j];
+        comments.innerHTML += `
+        <div class="comment">
+        <div><b>Tom Schlesig</b> ${comment}</div>
+        <div class="comment-heart"><span onclick="deleteComment(${i}, ${j})" class="material-symbols-outlined">
+        close
+        </span><span onclick="likeComment(${i}, ${j})" id="likeComment${i}, ${j}" class="material-symbols-outlined comment-heart">
+        favorite
+        </span></div>
+        </div>`;
+    }
+
+}
+
 
 function renderStoryTimeline() {
     let stories = document.getElementById('story-timeline');
@@ -87,28 +106,18 @@ function renderRecommendations() {
 
 // Post Popup Section
 
-function openPost(i, author, author_image, location, date, image, description, likes) {
+function openPost(i, author, author_image, location, date, image, description) {
     let popup = document.getElementById('popup-post');
     let bodyhtml = document.getElementById('body');
     let post = posts[i];
+    let likes = posts[i]['likes'];
     popup.innerHTML = '';
+    popup.classList.remove('d-none');
     popup.innerHTML = popupTemplateHTML(i, author, author_image, location, date, image, description, likes);
-    popup.classList.remove('d-none');
     bodyhtml.classList.add('no-scroll');
-    renderComments(i, post);
+    renderPopupComments(i, post);
+    checkLike(i);
 }
-
-
-/* function openPost(i, author, author_image, location, date, image, description, likes) {
-    let popup = document.getElementById('popup-post');
-    let bodyhtml = document.getElementById('body');
-    let post = posts[i];
-    popup.innerHTML = '';
-    popup.innerHTML = postTemplateHTML(i, author, author_image, location, date, image, description, likes);
-    popup.classList.remove('d-none');
-    bodyhtml.classList.add('no-scroll');
-    renderComments(i, post);
-} */
 
 
 function closePost() {
@@ -128,6 +137,21 @@ function addComment(index) {
     if (input.value.length >= 1) {
         posts[index]['comments'].push(input.value);
         renderComments(index, post);
+    } else {
+        alert('At least one character please.')
+    }
+    input.value = '';
+}
+
+
+function addPopupComment(index) {
+    let input = document.getElementById(`input-popup-comment${index}`);
+    let post = posts[index];
+
+    if (input.value.length >= 1) {
+        posts[index]['comments'].push(input.value);
+        renderPopupComments(index, post);
+        renderComments(index, post)
     } else {
         alert('At least one character please.')
     }
@@ -180,6 +204,18 @@ function like(i, likes) {
 }
 
 
+function checkLike(i) {
+    let heart = document.getElementById(`like-popup${i}`);
+
+    if (posts[i].likecheck == true) {
+        heart.classList.add('liked');
+
+    } else {
+        heart.classList.remove('liked');
+    }
+}
+
+
 function likeComment(i, j) {
     let likeComment = document.getElementById(`likeComment${i}, ${j}`);
 
@@ -211,13 +247,4 @@ function enterFunction() {
             document.getElementById('input-btn').click();
         }
     });
-}
-
-
-function slideRight() {
-
-}
-
-function slideLeft() {
-
 }

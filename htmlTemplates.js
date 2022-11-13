@@ -70,7 +70,7 @@ function popupTemplateHTML(i, author, author_image, location, date, image, descr
             </div>
             <img class="post-image" src="${image}" alt="Post Image">
             <div class="post-footer">
-                <div><span onclick="like(${i}, ${likes})" id="like${i}" class="material-symbols-outlined heart">
+                <div><span onclick="like(${i}, ${likes})" id="like-popup${i}" class="material-symbols-outlined heart">
                         favorite
                     </span>
                     <span class="material-symbols-outlined bubble">
@@ -89,11 +89,11 @@ function popupTemplateHTML(i, author, author_image, location, date, image, descr
             <div id="likeId${i}" class="likes"><b>${likes} likes</b></div>
             <div class="description"><b>${author}</b> ${description}</div>
             <div class="comment-section">
-                <div id="comments${i}"></div>
+                <div id="popup-comments${i}"></div>
                 <div class="add-comment-section">
-                    <form action="" onsubmit="addComment(${i}); return false">
-                        <input id="input-comment${i}" class="input-comment" type="text" placeholder="Add a comment...">
-                        <button onclick="addComment(${i})" id="input-btn${i}" class="send-btn" type="button">Post</button>
+                    <form action="" onsubmit="addPopupComment(${i}); return false">
+                        <input id="input-popup-comment${i}" class="input-comment" type="text" placeholder="Add a comment...">
+                        <button onclick="addPopupComment(${i})" id="input-btn${i}" class="send-btn" type="button">Post</button>
                 </form>
                     <div class="emoji"><span class="material-symbols-outlined">
                             sentiment_satisfied

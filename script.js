@@ -118,6 +118,7 @@ function openPost(i, author, author_image, location, date, image, description) {
     openPopup = true;
     renderPopupComments(i, post);
     checkLike(i);
+    renderBookmark(i);
 }
 
 
@@ -176,23 +177,61 @@ function deleteComment(i, j) {
 
 
 // Interactive Section
-
+/* 
 function bookmark(i) {
     let bookmark = document.getElementById(`bookmark${i}`);
-    let bookmarkCheck = posts[i].bookmarkCheck;
+    let bookmarkPopup = document.getElementById(`bookmarkPopup${i}`);
+    // let bookmarkcheck = posts[i].bookmarkcheck;
 
-    if (!bookmarkCheck) {
+    if (bookmarkcheck == true && openPopup == true) {
         bookmark.classList.add('bookmarked');
-        posts[i].bookmarkCheck = true;
+        bookmarkPopup.classList.add('bookmarked');
+        posts[i].bookmarkcheck = true;
+
+    } else if (!bookmarkcheck) {
+        bookmark.classList.add('bookmarked');
+        posts[i].bookmarkcheck = true;
+    } else
+        bookmark.classList.remove('bookmarked');
+    // posts[i].bookmarkcheck = false;
+
+} */
+
+function bookmark(i) {
+    let bookmarkcheck = posts[i].bookmarkcheck;
+
+    if (!bookmarkcheck) {
+        posts[i].bookmarkcheck = true;
+    } else {
+        posts[i].bookmarkcheck = false;
+    }
+    renderBookmark(i)
+}
+
+
+function renderBookmark(i) {
+    let bookmark = document.getElementById(`bookmark${i}`);
+    let bookmarkPopup = document.getElementById(`bookmarkPopup${i}`);
+    let bookmarkcheck = posts[i].bookmarkcheck;
+
+    if (bookmarkcheck == true && openPopup == true) {
+        bookmark.classList.add('bookmarked');
+        bookmarkPopup.classList.add('bookmarked');
+
+    } else if (bookmarkcheck == true) {
+        bookmark.classList.add('bookmarked');
+    } else if (openPopup == true) {
+        bookmarkPopup.classList.remove('bookmarked');
+        bookmark.classList.remove('bookmarked');
     } else {
         bookmark.classList.remove('bookmarked');
-        posts[i].bookmarkCheck = false;
     }
 }
 
 
 function like(i, likes) {
     let heart = document.getElementById(`like${i}`);
+    // let heartPopup = document.getElementById(`likepopup${i}`)
     let likeId = document.getElementById(`likeId${i}`);
     let likecheck = posts[i].likecheck;
 

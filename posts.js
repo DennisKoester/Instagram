@@ -9,7 +9,8 @@ let posts = [
         'likes': 129,
         'author_comment': ['Bullitourer'],
         'comments': ['Nice sunset!!'],
-        'likecheck': ''
+        'likecheck': '',
+        'bookmarkcheck': ''
     },
 
     {

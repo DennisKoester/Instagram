@@ -214,6 +214,10 @@
     color: gray;
 }
 
+.post-footer .bookmark:hover{
+    color: black;
+}
+
 .paper-plane {
     -webkit-transform: rotate(-45deg);
     padding: 0 0 8px 0 !important;

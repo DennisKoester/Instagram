@@ -81,7 +81,7 @@ function popupTemplateHTML(i, author, author_image, location, date, image, descr
                     </span>
                 </div>
                 <div onclick="bookmark(${i})">
-                    <span id="bookmark${i}" class="material-symbols-outlined bookmark">
+                    <span id="bookmarkPopup${i}" class="material-symbols-outlined bookmark">
                         bookmark
                     </span>
                 </div>

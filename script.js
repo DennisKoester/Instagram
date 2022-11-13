@@ -61,7 +61,6 @@ function renderComments(i, post) {
         </span></div>
         </div>`;
     }
-
 }
 
 function renderPopupComments(i, post) {
@@ -75,12 +74,11 @@ function renderPopupComments(i, post) {
         <div><b>Tom Schlesig</b> ${comment}</div>
         <div class="comment-heart"><span onclick="deleteComment(${i}, ${j})" class="material-symbols-outlined">
         close
-        </span><span onclick="likeComment(${i}, ${j})" id="likeComment${i}, ${j}" class="material-symbols-outlined comment-heart">
+        </span><span onclick="likeComment(${i}, ${j})" id="likePopupComment${i}, ${j}" class="material-symbols-outlined comment-heart">
         favorite
         </span></div>
         </div>`;
     }
-
 }
 
 
@@ -160,8 +158,10 @@ function addPopupComment(index) {
 
 
 function deleteComment(i, j) {
+    post = posts[i];
     posts[i]['comments'].splice(j, 1);
-    renderPosts();
+    renderComments(i, post);
+    renderPopupComments(i, post);
 }
 
 

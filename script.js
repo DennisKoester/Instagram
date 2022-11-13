@@ -253,8 +253,14 @@ function renderLike(i) {
 
 function likeComment(i, j) {
     let likeComment = document.getElementById(`likeComment${i}, ${j}`);
+    let likePopupComment = document.getElementById(`likePopupComment${i}, ${j}`);
 
-    likeComment.classList.toggle('liked');
+    if (openPopup == false) {
+        likeComment.classList.toggle('liked');
+    } else {
+        likeComment.classList.toggle('liked');
+        likePopupComment.classList.toggle('liked');
+    }
 }
 
 

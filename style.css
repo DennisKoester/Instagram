@@ -210,8 +210,17 @@
     cursor: pointer;
 }
 
+.post-footer span:hover {
+    color: gray;
+}
+
 .paper-plane {
     -webkit-transform: rotate(-45deg);
+    padding: 0 0 8px 0 !important;
+}
+
+.footer-container .paper-plane:hover {
+    -webkit-transform: scale(1.1) rotate(-45deg);
     padding: 0 0 8px 0 !important;
 }
 
@@ -310,12 +319,18 @@ form {
     cursor: pointer;
 }
 
+.footer-container span:hover {
+    transform: scale(1.1);
+}
+
 .own-profile-photo img {
     height: 30px;
     width: 30px;
     object-fit: cover;
     border-radius: 50%;
 }
+
+
 
 /* Post Popup */
 
@@ -446,13 +461,25 @@ form {
     color: red !important;
 }
 
+.cursorPointer {
+    cursor: pointer;
+}
+
 @media(max-width: 390px) {
     .search-container {
         display: none;
     }
 
     .story-container {
-        margin-bottom: -5px;
+        margin-bottom: -25px;
+    }
+
+    body {
+        padding-right: 0 !important;
+    }
+
+    .popup-container {
+        padding-right: 0 !important;
     }
 }
 
@@ -471,5 +498,17 @@ form {
 @media (hover: none) {
     .story-profile:hover {
         transform: none;
+    }
+
+    .post-footer span:hover {
+        color: inherit;
+    }
+
+    .footer-container span:hover {
+        transform: none;
+    }
+
+    .footer-container .paper-plane:hover {
+        -webkit-transform: scale(1) rotate(-45deg);
     }
 }

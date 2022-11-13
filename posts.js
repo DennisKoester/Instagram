@@ -21,7 +21,8 @@ let posts = [
         'description': 'Lieber mit dem Bulli an den Strand, als mit dem Porsche zur Scheune 🤭',
         'likes': 325,
         'author_comment': ['Dennis Köster'],
-        'comments': ['Taking both tho..']
+        'comments': ['Taking both tho..'],
+        'likecheck': ''
     },
 
     {
@@ -33,7 +34,8 @@ let posts = [
         'description': 'Blende deine Nachbarn ☀️🚕',
         'likes': 371,
         'author_comment': ['Dennis Köster'],
-        'comments': ['Nice ride']
+        'comments': ['Nice ride'],
+        'likecheck': ''
     },
 
     {
@@ -45,7 +47,8 @@ let posts = [
         'description': 'Shanghai Skyscrapers',
         'likes': 254,
         'author_comment': ['Hans Dieter'],
-        'comments': ['Sick shot!!']
+        'comments': ['Sick shot!!'],
+        'likecheck': ''
     },
 
 ];

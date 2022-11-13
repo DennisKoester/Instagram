@@ -45,7 +45,7 @@ function postTemplateHTML(i, author, author_image, location, date, image, descri
                         </span></div>
                 </div>
             </div>
-        </div>`
+        </div>`;
 }
 
 function popupTemplateHTML(i, author, author_image, location, date, image, description, likes) {
@@ -101,7 +101,7 @@ function popupTemplateHTML(i, author, author_image, location, date, image, descr
                 </div>
             </div>
         </div>
-        </div>`
+        </div>`;
 }
 
 
@@ -139,20 +139,44 @@ function storyTimelineHTML() {
                     <div class="story-profile">
                         <div class="story-photo"><img src="img/woman-2563491_640.jpg" alt="Story-Photo"></div>
                         <div class="profile-name">logia</div>
-                    </div>`
+                    </div>`;
 }
 
 
 function recommendationsHTML(i, recoName, recoImage) {
     return /*html*/ `
-    <div class="profile-container">
-        <div class="profile"><img src="${recoImage}" alt="Profil Image">
-            <div>
-                <div><b>${recoName}</b></div>
-                <div class="follow-text">follows you</div>
+        <div class="profile-container">
+            <div class="profile"><img src="${recoImage}" alt="Profil Image">
+                <div>
+                    <div><b>${recoName}</b></div>
+                    <div class="follow-text">follows you</div>
+                </div>
             </div>
-        </div>
-            <div onclick="follow(${i})" id="follow${i}" class="blue-and-pointer"><b>follow</b></div>
-    </div>`
+                <div onclick="follow(${i})" id="follow${i}" class="blue-and-pointer"><b>follow</b></div>
+        </div>`;
 }
 
+
+function renderCommentsHTML(i, j, comment) {
+    return /*html*/ `
+        <div class="comment">
+            <div><b>Tom Schlesig</b> ${comment}</div>
+            <div class="comment-heart"><span onclick="deleteComment(${i}, ${j})" class="material-symbols-outlined">
+                close
+            </span><span onclick="likeComment(${i}, ${j})" id="likeComment${i}, ${j}" class="material-symbols-outlined comment-heart">
+                favorite
+            </span></div>
+        </div>`;
+}
+
+function renderPopupCommentsHTML(i, j, comment) {
+    return /*html*/ `
+            <div class="comment">
+                <div><b>Tom Schlesig</b> ${comment}</div>
+                <div class="comment-heart"><span onclick="deleteComment(${i}, ${j})" class="material-symbols-outlined">
+                    close
+                </span><span onclick="likeComment(${i}, ${j})" id="likePopupComment${i}, ${j}" class="material-symbols-outlined comment-heart">
+                     favorite
+               </span></div>
+         </div>`;
+}

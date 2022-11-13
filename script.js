@@ -53,15 +53,7 @@ function renderComments(i, post) {
 
     for (let j = 0; j < post['comments'].length; j++) {
         const comment = post['comments'][j];
-        comments.innerHTML += `
-        <div class="comment">
-        <div><b>Tom Schlesig</b> ${comment}</div>
-        <div class="comment-heart"><span onclick="deleteComment(${i}, ${j})" class="material-symbols-outlined">
-        close
-        </span><span onclick="likeComment(${i}, ${j})" id="likeComment${i}, ${j}" class="material-symbols-outlined comment-heart">
-        favorite
-        </span></div>
-        </div>`;
+        comments.innerHTML += renderCommentsHTML(i, j, comment);
     }
 }
 
@@ -71,15 +63,7 @@ function renderPopupComments(i, post) {
 
     for (let j = 0; j < post['comments'].length; j++) {
         const comment = post['comments'][j];
-        comments.innerHTML += `
-        <div class="comment">
-        <div><b>Tom Schlesig</b> ${comment}</div>
-        <div class="comment-heart"><span onclick="deleteComment(${i}, ${j})" class="material-symbols-outlined">
-        close
-        </span><span onclick="likeComment(${i}, ${j})" id="likePopupComment${i}, ${j}" class="material-symbols-outlined comment-heart">
-        favorite
-        </span></div>
-        </div>`;
+        comments.innerHTML += renderPopupCommentsHTML(i, j, comment);
     }
 }
 

@@ -214,7 +214,7 @@
     color: gray;
 }
 
-.post-footer .bookmark:hover{
+.post-footer .bookmark:hover {
     color: black;
 }
 
@@ -475,7 +475,7 @@ form {
     }
 
     .story-container {
-        margin-bottom: -25px;
+        margin-bottom: -20px;
     }
 
     body {
